@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:4000';
-  console.log(backendUrl)
   const [persons, setPersons] = useState([]);
 
   useEffect(() => {

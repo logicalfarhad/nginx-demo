@@ -1,5 +1,6 @@
 # Use the official Nginx base image
-FROM nginx
+FROM nginx:alpine
 
-# Copy your custom Nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN rm -f /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/conf.d/
+

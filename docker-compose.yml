@@ -1,8 +1,10 @@
-version: '3'
+version: "3.8"
 services:
   frontend:
     build:
       context: ./frontend
+    ports:
+      - "3000:3000"
     depends_on:
       - backend
   backend:
@@ -13,8 +15,8 @@ services:
   nginx:
     build:
       context: ./nginx
-      dockerfile: Dockerfile
     ports:
       - "80:80"
     depends_on:
       - frontend
+      - backend
